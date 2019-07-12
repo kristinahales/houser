@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './Wizard.css';
 import axios from 'axios';
+
 
 class Wizard extends Component {
     constructor() {
@@ -12,11 +13,11 @@ class Wizard extends Component {
             city: '',
             state: '',
             zip: 0,
+            img: ''
 
         }
         this.handleChange = this.handleChange.bind(this);
         this.addHouse = this.addHouse.bind(this);
-
     }
 
     addHouse(property_name, address, city, state, zip) {
@@ -32,7 +33,7 @@ class Wizard extends Component {
             address: '',
             city: '',
             state: '',
-            zip: 0
+            zip: 0,
         })
     }
 
@@ -72,6 +73,7 @@ class Wizard extends Component {
 
                     <button onClick={() => this.addHouse(property_name, address, city, state, zip)}>Complete</button>
                 </div>
+
             </div>
         )
 

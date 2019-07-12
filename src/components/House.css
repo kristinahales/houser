@@ -1,21 +1,22 @@
-.main-listing-container {
+.outer-container {
     background: #AFD4C0 ;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.listing {
+.inner-container {
     display: flex;
     background:#DEDEDE;
     width: 60%;
     height: 25%;
-    flex-direction: column;
     line-height: .5%;
     margin-top: 20px;
+    flex-direction: column;
 
 }
 
 #button {
     width: 30px;
 }
+

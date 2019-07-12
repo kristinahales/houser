@@ -8,5 +8,6 @@ export default (
     <Switch>
         <Route path='/' exact component= {Dashboard}/>
         <Route path='/wizard' component={Wizard} />
+        
     </Switch>
 )
