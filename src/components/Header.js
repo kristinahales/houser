@@ -4,8 +4,8 @@ import './Header.css'
 class Header extends Component {
     render() {
         return (
-            <div className='header-container'>
-            <Header className='header-text'>Houser</Header>
+            <div className='header'>
+                <header className='text'>Houser</header>
             </div>
         )
     }

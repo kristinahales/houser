@@ -17,3 +17,5 @@ massive(CONNECTION_STRING)
 })
 .catch(error => console.log(error))
 
+
+app.get('/api/listings', ctrl.getAll);
