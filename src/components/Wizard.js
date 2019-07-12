@@ -12,7 +12,17 @@ class Wizard extends Component {
             zip: 0
         }
         this.handleChange = this.handleChange.bind(this);
+        // this.addHouseToList = this.addHouseToList.bind(this);
     }
+
+    // addHouseToList() {
+    //         property_name: this.state.property_name,
+    //         address: this.state.address,
+    //         city: this.state.city,
+    //         state: this.state.state,
+    //         zip: this.state.state
+
+    // }
 
     handleChange(e) {
         this.setState({
@@ -45,8 +55,11 @@ class Wizard extends Component {
 
             <label>Zip Code:</label>
             <div><input name='zip' value={zip} onChange={this.handleChange}/></div>
+
+            <button onClick={this.addHouseToList}>Complete</button>
             </div>
         )
+
     }
 }
 

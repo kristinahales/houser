@@ -1,0 +1,14 @@
+.main-listing-container {
+    background: #AFD4C0 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listing {
+    display: flex;
+    background: red;
+    width: 60%;
+    height: 300px;
+    flex-direction: column;
+}
