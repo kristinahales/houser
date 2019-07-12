@@ -1,0 +1,9 @@
+.header-container {
+    background: #519872;
+    width: 100%;
+    height: 100px;
+}
+
+.header-text {
+    font-size: 30px;
+}
