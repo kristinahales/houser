@@ -7,8 +7,15 @@
 
 .listing {
     display: flex;
-    background: red;
+    background:#DEDEDE;
     width: 60%;
-    height: 300px;
+    height: 25%;
     flex-direction: column;
+    line-height: .5%;
+    margin-top: 20px;
+
+}
+
+#button {
+    width: 30px;
 }

@@ -29,5 +29,16 @@ module.exports = {
             res.status(500).send({errorMessage: "Ooops! Something went wrong. Our engineers have been informed!"})
             console.log(err);
         })
+    },
+    addImage(req, res) {
+        const db = req.app.get('db');
+        const {image} = req.body;
+
+        db.addImage(image)
+        .then(houses => res.status(200).send(houses))
+        .catch(err => {
+            res.status(500).send({errorMessage: "Ooops! Something went wrong. Our engineers have been informed!"})
+            console.log(err);
+        })
     }
 }

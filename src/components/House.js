@@ -7,12 +7,15 @@ class House extends Component {
         return (
             <div className='main-listing-container'>
                 <div className='listing'>
-                    <button onClick={() => this.props.deleteHouse(listing.id)}>&times;</button>
-                    <h5>Property Name: {listing.property_name}</h5>
-                    <h5>Address: {listing.address}</h5>
-                    <h5>City: {listing.city}</h5>
-                    <h5>State: {listing.state}</h5>
-                    <h5>Zipcode: {listing.zip}</h5>
+                    <div>
+                    <button id='button' onClick={() => this.props.deleteHouse(listing.id)}>&times;</button>
+                    <p>Property Name: {listing.property_name}</p>
+                    <p>Address: {listing.address}</p>
+                    <p>City: {listing.city}</p>
+                    <p>State: {listing.state}</p>
+                    <p>Zipcode: {listing.zip}</p>
+                    <img src={listing.image} height='150px' width='200px'/>
+                    </div>
                 </div>
             </div>
         )

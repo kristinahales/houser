@@ -21,16 +21,6 @@ class Dashboard extends Component {
         })
     }
 
-    addHouse(house) {
-        axios.post('/api/listings', house)
-        .then(res => {
-            this.setState({
-                listings: res.data
-            })
-        })
-        .catch(err => console.log(err));
-    }
-    
     deleteHouse(id) {
         axios.delete(`/api/listings/${id}`)
         .then(res => {
@@ -43,7 +33,12 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <p className='dashboard'>Dashboard</p>
+                <div className='dashboard'>
+                    <p>Dashboard</p>
+                    <Link to='/wizard' >
+                    <button className='dashboard-button'>Add New Property</button>
+                    </Link>
+                </div>
 
             {
                 this.state.listings.map(listing => {
@@ -55,10 +50,6 @@ class Dashboard extends Component {
                     )
                 })
             }
-
-            <Link to='/wizard' >
-            <button>Add New Property</button>
-            </Link>
 
             </div>
         )

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import './Wizard.css';
+import axios from 'axios';
 
 class Wizard extends Component {
     constructor() {
@@ -9,20 +11,30 @@ class Wizard extends Component {
             address: '',
             city: '',
             state: '',
-            zip: 0
+            zip: 0,
+
         }
         this.handleChange = this.handleChange.bind(this);
-        // this.addHouseToList = this.addHouseToList.bind(this);
+        this.addHouse = this.addHouse.bind(this);
+
     }
 
-    // addHouseToList() {
-    //         property_name: this.state.property_name,
-    //         address: this.state.address,
-    //         city: this.state.city,
-    //         state: this.state.state,
-    //         zip: this.state.state
+    addHouse(property_name, address, city, state, zip) {
+        axios.post('/api/listings', {property_name, address, city, state, zip})
+        .then(() => this.props.history.push('/'))
+        .catch(err => console.log(err));
+        this.resetInput();
+    }
 
-    // }
+    resetInput() {
+        this.setState({
+            property_name: '',
+            address: '',
+            city: '',
+            state: '',
+            zip: 0
+        })
+    }
 
     handleChange(e) {
         this.setState({
@@ -31,32 +43,35 @@ class Wizard extends Component {
     }
 
     render() {
+
         let {property_name, address, city, state, zip} = this.state
         return (
-            <div>
+            <div className='main-container'> 
+                <div>
+                    <div className='button'>
+                        <p>Add to Inventory</p>
+                        <Link to='/'>
+                        <button className='button2'>Cancel</button>
+                        </Link>
+                    </div>
 
-                
-            <Link to='/'>
-            <button>Cancel</button>
-            </Link>
-            <br/>
+                    <label>Property Name:</label>
+                    <div><input name='property_name' value={property_name} onChange={this.handleChange}/></div>
 
-            <label>Property Name:</label>
-            <div><input name='property_name' value={property_name} onChange={this.handleChange}/></div>
+                    <label>Address:</label>
+                    <div><input name='address' value={address} onChange={this.handleChange}/></div>
 
-            <label>Address:</label>
-            <div><input name='address' value={address} onChange={this.handleChange}/></div>
+                    <label>City:</label>
+                    <div><input name='city' value={city} onChange={this.handleChange}/></div>
 
-            <label>City:</label>
-            <div><input name='city' value={city} onChange={this.handleChange}/></div>
+                    <label>State:</label>
+                    <div><input name='state' value={state} onChange={this.handleChange}/></div>
 
-            <label>State:</label>
-            <div><input name='state' value={state} onChange={this.handleChange}/></div>
+                    <label>Zip Code:</label>
+                    <div><input name='zip' value={zip} onChange={this.handleChange}/></div>
 
-            <label>Zip Code:</label>
-            <div><input name='zip' value={zip} onChange={this.handleChange}/></div>
-
-            <button onClick={this.addHouseToList}>Complete</button>
+                    <button onClick={() => this.addHouse(property_name, address, city, state, zip)}>Complete</button>
+                </div>
             </div>
         )
 

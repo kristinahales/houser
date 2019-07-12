@@ -1,0 +1,10 @@
+.main-container {
+    display: flex;
+    justify-content: center;    
+}
+
+.button2 {
+    background: #FEC2C2;
+    padding: 5px;
+}
+

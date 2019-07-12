@@ -21,3 +21,4 @@ massive(CONNECTION_STRING)
 app.get('/api/listings', ctrl.getAll);
 app.post('/api/listings', ctrl.addHouse);
 app.delete('/api/listings/:id', ctrl.deleteHouse);
+app.post('/api/image', ctrl.addImage);

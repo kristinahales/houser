@@ -2,5 +2,16 @@
     font-size: 30px;
     text-decoration: underline;
     color: #3B5249;
-    margin-left: 20%;
+    display: flex;
+    justify-content: space-around
 }
+
+.dashboard-button {
+    margin-top: 40px;
+    background: #8aea92;
+    padding: 8px;
+    color:  #3B5249;
+    font-weight: bold;
+
+}
+
